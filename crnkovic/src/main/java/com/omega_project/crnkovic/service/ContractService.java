@@ -1,9 +1,9 @@
-package service;
+package com.omega_project.crnkovic.service;
 
-import model.Contract;
+import com.omega_project.crnkovic.repository.ContractRepository;
+import com.omega_project.crnkovic.model.Contract;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import repository.ContractRepository;
 
 import java.util.List;
 

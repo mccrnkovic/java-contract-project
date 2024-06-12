@@ -1,9 +1,8 @@
-package repository;
+package com.omega_project.crnkovic.repository;
 
-import model.Contract;
+import com.omega_project.crnkovic.model.Contract;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
