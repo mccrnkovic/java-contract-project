@@ -1,7 +1,10 @@
 package model;
 
+import lombok.Data;
+
 import java.util.Date;
 
+@Data
 public class Contract {
     String id;
     String customer;
@@ -9,5 +12,4 @@ public class Contract {
     Date paymentDate;
     Date deliveryDueDate;
     String status;
-
 }
