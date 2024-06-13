@@ -1,10 +1,8 @@
 package com.omega_project.crnkovic.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.annotations.ColumnDefault;
 
 import java.util.Date;
 
@@ -12,11 +10,13 @@ import java.util.Date;
 @Entity
 public class Contract {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private String id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String customer;
-    private String number;
+    @Column(nullable = false)
+    private String contractNumber;
     private Date paymentDate;
     private Date deliveryDueDate;
+    @Column(nullable = false)
     private String status;
 }
