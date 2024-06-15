@@ -20,7 +20,7 @@ public class Contract {
     private Date paymentDate;
     @Column(nullable = false)
     private Date deliveryDueDate;
-    @Column(nullable = false, columnDefinition = "text default 'CREATED'")
+    @Column(nullable = false, columnDefinition = "char(20) default 'CREATED'")
     @Enumerated(EnumType.STRING)
     private ContractStatus status;
 }
