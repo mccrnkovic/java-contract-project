@@ -1,5 +1,6 @@
 package com.omega_project.crnkovic.dto;
 
+import com.omega_project.crnkovic.model.ContractStatus;
 import lombok.Data;
 
 import java.util.Date;
@@ -11,5 +12,5 @@ public class ContractDto {
     private String contractNumber;
     private Date paymentDate;
     private Date deliveryDueDate;
-    private String status;
+    private ContractStatus status;
 }

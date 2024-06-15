@@ -18,5 +18,6 @@ public class Contract {
     private Date paymentDate;
     private Date deliveryDueDate;
     @Column(nullable = false)
-    private String status;
+    @Enumerated(EnumType.STRING)
+    private ContractStatus status;
 }
