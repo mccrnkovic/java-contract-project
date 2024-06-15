@@ -1,5 +1,8 @@
 package com.omega_project.crnkovic.model;
 
+import java.util.Arrays;
+import java.util.Optional;
+
 public enum ContractStatus {
     DELIVERED(false),
     ORDERED(new ContractStatus[]{DELIVERED}, true),
@@ -14,6 +17,13 @@ public enum ContractStatus {
 
     ContractStatus(Boolean isActive) {
         this.isActive = isActive;
+    }
+
+    public Boolean isAllowedTransition(ContractStatus contractStatus) {
+        Optional<ContractStatus> allowedTransitionOptional = Arrays.stream(this.allowedTransitions)
+                .filter(allowed -> allowed == contractStatus).findAny();
+
+        return allowedTransitionOptional.isPresent();
     }
 
 }
