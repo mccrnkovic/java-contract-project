@@ -3,6 +3,7 @@ package com.omega_project.crnkovic.controller;
 
 import com.omega_project.crnkovic.dto.ContractDto;
 import com.omega_project.crnkovic.dto.ContractItemDto;
+import com.omega_project.crnkovic.dto.SingleContractDto;
 import com.omega_project.crnkovic.model.ContractItem;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -27,6 +28,12 @@ public class ContractController {
     @GetMapping("/getAllContracts")
     public ResponseEntity getAllContracts(){
         List<ContractDto> result = contractService.getAllContracts();
+        return new ResponseEntity(result, HttpStatus.OK);
+    }
+
+    @GetMapping("/getContractById")
+    public ResponseEntity getContractById(@RequestParam Long contractId){
+        SingleContractDto result = contractService.getContractById(contractId);
         return new ResponseEntity(result, HttpStatus.OK);
     }
 

@@ -2,6 +2,7 @@ package com.omega_project.crnkovic.service;
 
 import com.omega_project.crnkovic.dto.ContractDto;
 import com.omega_project.crnkovic.dto.ContractItemDto;
+import com.omega_project.crnkovic.dto.SingleContractDto;
 import com.omega_project.crnkovic.mapper.ContractItemMapper;
 import com.omega_project.crnkovic.mapper.ContractMapper;
 import com.omega_project.crnkovic.model.ContractItem;
@@ -41,5 +42,12 @@ public class ContractService {
                 .collect(Collectors.toList());
 
         return contractItemDtos;
+    }
+
+    public SingleContractDto getContractById(Long contractId) {
+        Contract contract = contractRepository.findById(contractId.toString()).get();
+        SingleContractDto singleContractDto = ContractMapper.MAPPER.toSingleContractDto(contract);
+
+        return singleContractDto;
     }
 }
