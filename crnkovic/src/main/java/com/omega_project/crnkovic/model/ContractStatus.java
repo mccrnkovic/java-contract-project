@@ -7,7 +7,7 @@ import java.util.Optional;
 
 @Getter
 public enum ContractStatus {
-    DELIVERED(false),
+    DELIVERED(new ContractStatus[]{}, false),
     ORDERED(new ContractStatus[]{DELIVERED}, true),
     CREATED(new ContractStatus[]{ORDERED}, true);
     ContractStatus[] allowedTransitions;
@@ -15,10 +15,6 @@ public enum ContractStatus {
 
     ContractStatus(ContractStatus[] allowedTransitions, Boolean isActive) {
         this.allowedTransitions = allowedTransitions;
-        this.isActive = isActive;
-    }
-
-    ContractStatus(Boolean isActive) {
         this.isActive = isActive;
     }
 
