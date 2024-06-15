@@ -6,7 +6,6 @@ import org.mapstruct.Mapper;
 import org.springframework.stereotype.Component;
 
 @Mapper
-@Component
 public interface ContractMapper {
 
     public ContractDto toDto(Contract contract);
