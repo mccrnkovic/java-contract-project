@@ -5,6 +5,7 @@ import lombok.Data;
 import org.hibernate.annotations.ColumnDefault;
 
 import java.util.Date;
+import java.util.List;
 
 @Data
 @Entity
@@ -23,4 +24,6 @@ public class Contract {
     @Column(nullable = false, columnDefinition = "char(20) default 'CREATED'")
     @Enumerated(EnumType.STRING)
     private ContractStatus status;
+    @OneToMany(mappedBy = "contract", fetch = FetchType.LAZY)
+    private List<ContractItem> items;
 }
