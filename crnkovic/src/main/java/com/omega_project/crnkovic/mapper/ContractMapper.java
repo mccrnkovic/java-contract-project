@@ -1,14 +1,16 @@
 package com.omega_project.crnkovic.mapper;
 
 import com.omega_project.crnkovic.dto.ContractDto;
+import com.omega_project.crnkovic.dto.SingleContractDto;
 import com.omega_project.crnkovic.model.Contract;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
-@Mapper
+@Mapper(uses = ContractItemMapper.class)
 public interface ContractMapper {
 
     ContractMapper MAPPER = Mappers.getMapper(ContractMapper.class);
     ContractDto toDto(Contract contract);
+    SingleContractDto toSingleContractDto(Contract contract);
     Contract toModel(ContractDto contractDto);
 }
