@@ -17,7 +17,7 @@ public class Contract {
     private String contractNumber;
     private Date paymentDate;
     private Date deliveryDueDate;
-    @Column(nullable = false)
+    @Column(nullable = false, columnDefinition = "text default 'CREATED'")
     @Enumerated(EnumType.STRING)
     private ContractStatus status;
 }

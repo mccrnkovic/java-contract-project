@@ -1,8 +1,11 @@
 package com.omega_project.crnkovic.model;
 
+import lombok.Getter;
+
 import java.util.Arrays;
 import java.util.Optional;
 
+@Getter
 public enum ContractStatus {
     DELIVERED(false),
     ORDERED(new ContractStatus[]{DELIVERED}, true),
