@@ -9,6 +9,6 @@ import org.mapstruct.factory.Mappers;
 public interface ContractMapper {
 
     ContractMapper MAPPER = Mappers.getMapper(ContractMapper.class);
-    public ContractDto toDto(Contract contract);
-    public Contract toModel(ContractDto contractDto);
+    ContractDto toDto(Contract contract);
+    Contract toModel(ContractDto contractDto);
 }
