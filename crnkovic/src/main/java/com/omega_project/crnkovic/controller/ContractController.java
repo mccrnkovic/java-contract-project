@@ -1,6 +1,7 @@
 package com.omega_project.crnkovic.controller;
 
-import com.omega_project.crnkovic.model.Contract;
+
+import com.omega_project.crnkovic.dto.ContractDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,7 +23,7 @@ public class ContractController {
 
     @GetMapping("/getAllContracts")
     public ResponseEntity getAllContracts(){
-        List<Contract> result = contractService.findAll();
+        List<ContractDto> result = contractService.findAll();
         return new ResponseEntity(result, HttpStatus.OK);
     }
 }
