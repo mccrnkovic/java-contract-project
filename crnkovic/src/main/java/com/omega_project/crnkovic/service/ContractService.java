@@ -15,6 +15,8 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static com.omega_project.crnkovic.repository.ContractRepository.*;
+
 @Service
 public class ContractService {
     private ContractRepository contractRepository;
@@ -49,5 +51,20 @@ public class ContractService {
         SingleContractDto singleContractDto = ContractMapper.MAPPER.toSingleContractDto(contract);
 
         return singleContractDto;
+    }
+
+    public List<ContractDto> getAllContractsByFilter(ContractDto contractDto) {
+        Contract contract = ContractMapper.MAPPER.toModel(contractDto);
+
+        List<Contract> contracts = contractRepository.findAll(
+                byCustomer(contract.getCustomer())
+                .and(byActiveStatus(true))
+        );
+
+        List<ContractDto> contractDtos = contracts.stream()
+                .map(ContractMapper.MAPPER::toDto)
+                .collect(Collectors.toList());
+
+        return contractDtos;
     }
 }
