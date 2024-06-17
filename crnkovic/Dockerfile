@@ -14,4 +14,4 @@ WORKDIR "/app"
 EXPOSE 2222
 
 #Run the jar file
-CMD java -jar "crnkovic-0.0.1-SNAPSHOT.jar"
+CMD java -jar "crnkovic-0.0.1-SNAPSHOT.jar" --spring.profiles.active=prod
