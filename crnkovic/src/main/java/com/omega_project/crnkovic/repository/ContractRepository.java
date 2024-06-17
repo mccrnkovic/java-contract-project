@@ -47,7 +47,11 @@ public interface ContractRepository extends JpaRepository<Contract, String>, Jpa
 
             Expression<String> statusExpression = root.get("status");
 
-            return statusExpression.in(active ? activeStatusList : inactiveStatusList);
+            if (active != null) {
+                return statusExpression.in(active ? activeStatusList : inactiveStatusList);
+            } else {
+                return criteriaBuilder.conjunction();
+            }
         });
     }
 

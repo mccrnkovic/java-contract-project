@@ -58,7 +58,7 @@ public class ContractService {
 
         List<Contract> contracts = contractRepository.findAll(
                 byCustomer(contract.getCustomer())
-                .and(byActiveStatus(true))
+                .and(byActiveStatus(contractDto.getIsActive()))
         );
 
         List<ContractDto> contractDtos = contracts.stream()
