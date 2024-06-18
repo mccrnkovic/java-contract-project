@@ -1,7 +1,6 @@
-package com.omega_project.crnkovic.dto;
+package com.contract_project.crnkovic.dto;
 
-import com.omega_project.crnkovic.model.ContractStatus;
-import jakarta.persistence.*;
+import com.contract_project.crnkovic.model.ContractStatus;
 import lombok.Data;
 
 @Data

@@ -1,4 +1,4 @@
-package com.omega_project.crnkovic;
+package com.contract_project.crnkovic;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

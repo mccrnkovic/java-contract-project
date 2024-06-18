@@ -1,12 +1,8 @@
-package com.omega_project.crnkovic.repository;
+package com.contract_project.crnkovic.repository;
 
-import com.omega_project.crnkovic.model.Contract;
-import com.omega_project.crnkovic.model.ContractItem;
-import com.omega_project.crnkovic.model.ContractStatus;
+import com.contract_project.crnkovic.model.Contract;
+import com.contract_project.crnkovic.model.ContractStatus;
 import jakarta.persistence.criteria.Expression;
-import jakarta.persistence.criteria.Path;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.boot.autoconfigure.rsocket.RSocketProperties;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;

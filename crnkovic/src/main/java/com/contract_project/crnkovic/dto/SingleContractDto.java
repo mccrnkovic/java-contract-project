@@ -1,9 +1,7 @@
-package com.omega_project.crnkovic.dto;
+package com.contract_project.crnkovic.dto;
 
-import com.omega_project.crnkovic.model.ContractStatus;
 import lombok.Data;
 
-import java.util.Date;
 import java.util.List;
 
 @Data

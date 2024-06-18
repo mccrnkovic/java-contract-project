@@ -1,18 +1,17 @@
-package com.omega_project.crnkovic.controller;
+package com.contract_project.crnkovic.controller;
 
 
-import com.omega_project.crnkovic.dto.ContractDto;
-import com.omega_project.crnkovic.dto.ContractItemDto;
-import com.omega_project.crnkovic.dto.SingleContractDto;
-import com.omega_project.crnkovic.model.Contract;
+import com.contract_project.crnkovic.dto.ContractDto;
+import com.contract_project.crnkovic.dto.ContractItemDto;
+import com.contract_project.crnkovic.dto.SingleContractDto;
+import com.contract_project.crnkovic.model.Contract;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import com.omega_project.crnkovic.service.ContractService;
+import com.contract_project.crnkovic.service.ContractService;
 
-import javax.swing.table.TableRowSorter;
 import java.util.List;
 
 @Slf4j

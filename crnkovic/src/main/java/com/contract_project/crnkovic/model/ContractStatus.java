@@ -1,4 +1,4 @@
-package com.omega_project.crnkovic.model;
+package com.contract_project.crnkovic.model;
 
 import lombok.Getter;
 

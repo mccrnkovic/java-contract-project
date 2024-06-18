@@ -1,7 +1,7 @@
-package com.omega_project.crnkovic.mapper;
+package com.contract_project.crnkovic.mapper;
 
-import com.omega_project.crnkovic.dto.ContractItemDto;
-import com.omega_project.crnkovic.model.ContractItem;
+import com.contract_project.crnkovic.dto.ContractItemDto;
+import com.contract_project.crnkovic.model.ContractItem;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
