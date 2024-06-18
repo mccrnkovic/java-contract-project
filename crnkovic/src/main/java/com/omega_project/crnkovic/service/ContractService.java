@@ -6,6 +6,7 @@ import com.omega_project.crnkovic.dto.SingleContractDto;
 import com.omega_project.crnkovic.mapper.ContractItemMapper;
 import com.omega_project.crnkovic.mapper.ContractMapper;
 import com.omega_project.crnkovic.model.ContractItem;
+import com.omega_project.crnkovic.model.ContractStatus;
 import com.omega_project.crnkovic.repository.ContractItemRepository;
 import com.omega_project.crnkovic.repository.ContractRepository;
 import com.omega_project.crnkovic.model.Contract;
@@ -54,10 +55,9 @@ public class ContractService {
     }
 
     public List<ContractDto> getAllContractsByFilter(ContractDto contractDto) {
-        Contract contract = ContractMapper.MAPPER.toModel(contractDto);
 
         List<Contract> contracts = contractRepository.findAll(
-                byCustomer(contract.getCustomer())
+                byCustomer(contractDto.getCustomer())
                 .and(byActiveStatus(contractDto.getIsActive()))
         );
 
@@ -70,6 +70,7 @@ public class ContractService {
 
     public Contract insertContract(SingleContractDto singleContractDto) {
         Contract contract = ContractMapper.MAPPER.toModel(singleContractDto);
+        contract.setStatus(ContractStatus.CREATED);
         contract = contractRepository.save(contract);
         return contract;
     }
