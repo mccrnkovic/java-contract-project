@@ -68,7 +68,7 @@ public class ContractService {
         return contractDtos;
     }
 
-    public Contract insertContract(SingleContractDto singleContractDto) {
+    public Contract insertUpdateContract(SingleContractDto singleContractDto) {
         Contract contract = ContractMapper.MAPPER.toModel(singleContractDto);
         contract.setStatus(ContractStatus.CREATED);
         contract = contractRepository.save(contract);

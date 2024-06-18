@@ -5,9 +5,7 @@ import com.omega_project.crnkovic.dto.ContractDto;
 import com.omega_project.crnkovic.dto.ContractItemDto;
 import com.omega_project.crnkovic.dto.SingleContractDto;
 import com.omega_project.crnkovic.model.Contract;
-import com.omega_project.crnkovic.model.ContractItem;
 import lombok.extern.slf4j.Slf4j;
-import org.hibernate.PropertyValueException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -45,10 +43,10 @@ public class ContractController {
         return new ResponseEntity(result, HttpStatus.OK);
     }
 
-    @PostMapping("/insertContract")
+    @PostMapping("/insertUpdateContract")
     public ResponseEntity insertContract(@RequestBody SingleContractDto singleContractDto) {
         try {
-            Contract contract = contractService.insertContract(singleContractDto);
+            Contract contract = contractService.insertUpdateContract(singleContractDto);
             return new ResponseEntity(contract, HttpStatus.OK);
         } catch (Exception e) {
             log.error(e.getMessage());
