@@ -46,9 +46,9 @@ public class ContractController {
     }
 
     @PostMapping("/insertContract")
-    public ResponseEntity insertContract(@RequestBody ContractDto contractDto) {
+    public ResponseEntity insertContract(@RequestBody SingleContractDto singleContractDto) {
         try {
-            Contract contract = contractService.insertContract(contractDto);
+            Contract contract = contractService.insertContract(singleContractDto);
             return new ResponseEntity(contract, HttpStatus.OK);
         } catch (Exception e) {
             log.error(e.getMessage());

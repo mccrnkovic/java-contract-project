@@ -13,11 +13,13 @@ import org.mapstruct.factory.Mappers;
 public interface ContractMapper {
 
     ContractMapper MAPPER = Mappers.getMapper(ContractMapper.class);
-
     @Mapping(target = "isActive", source = "status", qualifiedByName = "isStatusActive")
     ContractDto toDto(Contract contract);
+    @Mapping(target = "isActive", source = "status", qualifiedByName = "isStatusActive")
     SingleContractDto toSingleContractDto(Contract contract);
     Contract toModel(ContractDto contractDto);
+
+    Contract toModel(SingleContractDto singleContractDto);
 
     @Named("isStatusActive")
     static Boolean isStatusActive(ContractStatus status) {
