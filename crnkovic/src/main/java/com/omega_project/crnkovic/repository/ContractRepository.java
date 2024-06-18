@@ -21,7 +21,7 @@ public interface ContractRepository extends JpaRepository<Contract, String>, Jpa
 
     static Specification<Contract> byCustomer(String customer) {
         return  ((root, query, criteriaBuilder) -> {
-           return customer != null ? criteriaBuilder.like(root.get("customer"), "%" + customer + "%")
+           return customer != null ? criteriaBuilder.like(criteriaBuilder.lower(root.get("customer")), "%" + customer.toLowerCase() + "%")
                     : criteriaBuilder.conjunction();
         });
     }
