@@ -74,4 +74,8 @@ public class ContractService {
         contract = contractRepository.save(contract);
         return contract;
     }
+
+    public void deleteContract(Long id) {
+        contractRepository.deleteById(String.valueOf(id));
+    }
 }

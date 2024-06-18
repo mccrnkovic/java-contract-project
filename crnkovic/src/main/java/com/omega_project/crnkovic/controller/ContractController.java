@@ -12,6 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.omega_project.crnkovic.service.ContractService;
 
+import javax.swing.table.TableRowSorter;
 import java.util.List;
 
 @Slf4j
@@ -48,6 +49,17 @@ public class ContractController {
         try {
             Contract contract = contractService.insertUpdateContract(singleContractDto);
             return new ResponseEntity(contract, HttpStatus.OK);
+        } catch (Exception e) {
+            log.error(e.getMessage());
+            return new ResponseEntity(e.getMessage(), HttpStatus.BAD_REQUEST);
+        }
+    }
+
+    @DeleteMapping("/deleteContract")
+    public ResponseEntity deleteContract(@RequestParam Long id) {
+        try {
+            contractService.deleteContract(id);
+            return new ResponseEntity(HttpStatus.NO_CONTENT);
         } catch (Exception e) {
             log.error(e.getMessage());
             return new ResponseEntity(e.getMessage(), HttpStatus.BAD_REQUEST);
